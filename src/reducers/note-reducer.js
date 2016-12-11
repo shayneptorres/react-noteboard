@@ -15,7 +15,6 @@ export default function(state={}, action){
 function editState(notes, noteId){
     const oldNote = find(notes, {id: noteId})
     const oldNoteIndex = findIndex(notes, {id: noteId})
-    console.log(oldNote.state)
     if(oldNote.state === "EDITING"){
         const newNote = Object.assign({},oldNote, {state: "DISPLAY"})
         return [...notes.slice(0,oldNoteIndex),newNote, ...notes.slice(oldNoteIndex, notes.length-1)]
