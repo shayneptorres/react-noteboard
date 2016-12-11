@@ -1,0 +1,42 @@
+.note-card-body
+{
+    position: absolute;
+    margin: 10px 10px 10px 10px;
+    width: 250px;
+    height: 200px;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9ImciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTM5LjUiIHkxPSIwIiB4Mj0iMTM5LjUiIHkyPSIyMjAiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkOWJmMjUiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q5YmYyNSIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjc5IiBoZWlnaHQ9IjIyMCIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(217, 191, 37)), color-stop(100%, rgb(217, 191, 37)));
+    background-image: -webkit-linear-gradient(top, rgb(217, 191, 37) 0%, rgb(217, 191, 37) 100%);
+    background-image:    -moz-linear-gradient(top, rgb(217, 191, 37) 0%, rgb(217, 191, 37) 100%);
+    background-image:     -ms-linear-gradient(top, rgb(217, 191, 37) 0%, rgb(217, 191, 37) 100%);
+    background-image:      -o-linear-gradient(top, rgb(217, 191, 37) 0%, rgb(217, 191, 37) 100%);
+    background-image:         linear-gradient(to bottom, rgb(217, 191, 37) 0%, rgb(217, 191, 37) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9bf25', endColorstr='#d9bf25', GradientType=0);
+    background-repeat: no-repeat;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 0 rgb(0, 0, 0);
+       -moz-box-shadow: 0px 0px 8px 0 rgb(0, 0, 0);
+            box-shadow: 0px 0px 8px 0 rgb(0, 0, 0);
+    -webkit-border-radius: 2px 2px 2px 2px;
+       -moz-border-radius: 2px 2px 2px 2px;
+            border-radius: 2px 2px 2px 2px;
+}
+
+h3 {
+    margin: 5px 5px 5px 5px;
+}
+
+p {
+    padding: 20px 20px 20px 20px;
+    text-overflow: clip;
+}
+
+textarea {
+    height: 100px;
+    width: 230px;
+    margin: 10px 10px 10px 10px;
+}
+
+button {
+    margin: 10px 10px 10px 10px;
+}
