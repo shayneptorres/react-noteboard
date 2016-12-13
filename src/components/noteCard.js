@@ -17,7 +17,13 @@ class NoteCard extends Component {
     displayForm(){
         return (
             <div className="note-card-body">
-            <textarea></textarea>
+            <Form ref='noteForm'>
+                <Field
+                    name='newNote'
+                    label='Enter a note'
+                    type='text'
+                />
+            </Form>
                 <div>
                     <button type="" className="btn btn-warning" onClick={ this.exitEditMode.bind(this) }>X</button>    
                 </div>
@@ -46,7 +52,8 @@ class NoteCard extends Component {
 
     exitEditMode(){
         let { handleClick } = this.props
-        handleClick(this.props.id, "edit")
+        console.log(this.refs['noteForm'].getFormValues());
+        // handleClick(this.props.id, "edit")
         // this.setState({
         //     editing: false
         // })
