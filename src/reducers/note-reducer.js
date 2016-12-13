@@ -13,10 +13,11 @@ export default function(state={}, action){
 }
 
 function editState(notes, noteId){
+    console.log("Edit state was called in the reducer")
     const oldNote = find(notes, {id: noteId})
     const oldNoteIndex = findIndex(notes, {id: noteId})
     if(oldNote.state === "EDITING"){
-        const newNote = Object.assign({},oldNote, {state: "DISPLAY"})
+        const newNote = Object.assign({},oldNote, {state: "DISPLAYING"})
         return [...notes.slice(0,oldNoteIndex),newNote, ...notes.slice(oldNoteIndex, notes.length-1)]
     } else {
         const newNote = Object.assign({},oldNote, {state: "EDITING"})

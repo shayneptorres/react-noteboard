@@ -1,30 +1,83 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {editState} from '../actions/noteActions'
+import {Form, Field} from 'simple-react-forms';
+var ptypes = React.PropTypes
 import '../styles/noteCard.css';
 
-const NoteCard = ({id=0,title="No title",description="No description", handleClick, state="EDITING"}) => {
-    if(state === "EDITING"){
+
+class NoteCard extends Component {
+    constructor(){
+        super()
+        this.state = {
+            editing: false
+        }
+    }
+
+    displayForm(){
         return (
             <div className="note-card-body">
-                <textarea></textarea>
+            <textarea></textarea>
                 <div>
-                    <button type="" className="btn btn-warning" onClick={ () => handleClick(id, "end-edit") }>X</button>    
+                    <button type="" className="btn btn-warning" onClick={ this.exitEditMode.bind(this) }>X</button>    
                 </div>
             </div>
         )
-    } else {
+    }
+
+    displayNote(){
         return (
-        <div className="note-card-body">
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <div>
-                <button className="btn btn-success" onClick={ () => handleClick(id, "edit") }>Edit note</button>
+
+            <div className="note-card-body">
+                <h3>{this.props.title}</h3>
+                <p>{this.props.description}</p>
+                <div>
+                    <button className="btn btn-success" onClick = { this.enterEditMode.bind(this) } >Edit note</button>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+    enterEditMode(){
+        this.setState({
+            editing: true
+        })
+    }
+
+    exitEditMode(){
+        let { handleClick } = this.props
+        handleClick(this.props.id, "edit")
+        // this.setState({
+        //     editing: false
+        // })
+    }
+
+    render(){
+        console.log(this.props.state)
+        if (this.state.editing){
+            return this.displayForm()
+        } else {
+            return this.displayNote()
+        }
     }
 }
+
+
+
+// const NoteCard = ({id=0,title="No title",description="No description", handleClick, state="EDITING"}) => {
+//     if(state === "EDITING"){
+//         return (
+//             <div className="note-card-body">
+//             <textarea></textarea>
+//                 <div>
+//                     <button type="" className="btn btn-warning" onClick={ () => handleClick(id, "end-edit",Form.refs) }>X</button>    
+//                 </div>
+//             </div>
+//         )
+//     } else {
+        
+//     }
+// }
 
 function mapStateToProps(state){
     console.log(state)
@@ -33,11 +86,11 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-    
     return {
         handleClick: (id, state) => {
             switch (state) {
                 case "edit":
+                console.log("Edit was called in mapDispatchToProps")
                     dispatch(editState(id))
                     break;
                 case "end-edit":
