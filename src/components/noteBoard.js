@@ -6,8 +6,9 @@ import '../styles/noteBoard.css';
 const NoteBoard = ({notes=[]}) => {
     return(
         <div>
-            {            
-            notes.map((note)=>{
+            {         
+                 
+            notes.map((note) => {
                 return (
                     <div className="col-sm-3" key={note.id}>
                         <NoteCard {...note} /> 
@@ -19,7 +20,6 @@ const NoteBoard = ({notes=[]}) => {
 }
 
 function mapStateToProps(state){
-    console.log(state)
     return {
         notes: state
     }

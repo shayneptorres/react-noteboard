@@ -52,11 +52,12 @@ class NoteCard extends Component {
 
     exitEditMode(){
         let { handleClick } = this.props
+        let newNoteString = this.refs['noteForm'].getFormValues()
         console.log(this.refs['noteForm'].getFormValues());
-        // handleClick(this.props.id, "edit")
-        // this.setState({
-        //     editing: false
-        // })
+        handleClick(this.props.id, "edit", newNoteString)
+        this.setState({
+            editing: false
+        })
     }
 
     render(){
@@ -94,11 +95,11 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        handleClick: (id, state) => {
+        handleClick: (id, state, newNoteString) => {
             switch (state) {
                 case "edit":
-                console.log("Edit was called in mapDispatchToProps")
-                    dispatch(editState(id))
+                console.log("mapDispatchToProps:",newNoteString["newNote"])
+                    dispatch(editState(id, newNoteString))
                     break;
                 case "end-edit":
                     dispatch(editState(id))

@@ -6,9 +6,11 @@ export const editNote = (note, notes) => {
     }
 }
 
-export function editState(noteId){
+export function editState(noteId, newNoteString){
+     console.log("noteAction:",newNoteString)
     return {
         type: 'EDIT_STATE',
-        noteId
+        noteId, 
+        newNoteString
     }
 }
