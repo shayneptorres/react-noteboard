@@ -6,15 +6,19 @@ import '../styles/noteBoard.css';
 const NoteBoard = ({notes=[]}) => {
     return(
         <div>
-            {         
-                 
-            notes.map((note) => {
-                return (
-                    <div className="col-sm-3" key={note.id}>
-                        <NoteCard {...note} /> 
-                    </div>
-                );  
-            })}
+            <div>
+                <button className="btn btn-info">Add note</button>
+            </div>
+            <div>
+                {         
+                notes.map((note) => {
+                    return (
+                        <div className="col-sm-3" key={note.id}>
+                            <NoteCard {...note} /> 
+                        </div>
+                    );  
+                })}
+            </div>
         </div>
     )
 }

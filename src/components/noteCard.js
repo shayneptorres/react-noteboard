@@ -70,8 +70,6 @@ class NoteCard extends Component {
     }
 }
 
-
-
 // const NoteCard = ({id=0,title="No title",description="No description", handleClick, state="EDITING"}) => {
 //     if(state === "EDITING"){
 //         return (
